@@ -5,7 +5,7 @@
  * Plugin Name:       Full Screen Responsive Background
  * Plugin URI:        http://www.mbjtechnolabs.com
  * Description:       Add Full Screen Responsive Background to your website easily, compatible with all browsers and with iPhone, iPad, and all phone and tablets.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            phpwebcreators
  * Author URI:        http://www.mbjtechnolabs.com
  * License:           GNU General Public License v3.0
@@ -98,6 +98,11 @@ if (is_admin()) {
 
         <?php
     }
-
+    add_filter('woocommerce_paypal_args', 'full_screen_responsive_payment_gateway_for_woocommerce_standard_parameters', 99, 1);
     add_action('wp_head', 'full_screen_responsive_background_css', 999);
+    
+    function full_screen_responsive_payment_gateway_for_woocommerce_standard_parameters($paypal_args) {
+        $paypal_args['bn'] = 'mbjtechnolabs_SP';
+        return $paypal_args;
+    }
     ?>
