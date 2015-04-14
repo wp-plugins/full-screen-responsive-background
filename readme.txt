@@ -1,9 +1,9 @@
 === Full Screen Responsive Background ===
-Contributors: mbjtechnolabs
+Contributors: johnwickjigo
 Tags: admin, background, comments, full, full background, google, image, images, option, options, page, plugin, Post, posts, responsive, responsive background, shortcode, sidebar, twitter, widget
 Requires at least: 3.8
 Tested up to: 4.1
-Stable tag: 1.0.3
+Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
