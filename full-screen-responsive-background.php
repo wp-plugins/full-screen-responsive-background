@@ -5,7 +5,7 @@
  * Plugin Name:       Full Screen Responsive Background
  * Plugin URI:        http://webs-spider.com/
  * Description:       Add Full Screen Responsive Background to your website easily, compatible with all browsers and with iPhone, iPad, and all phone and tablets.
- * Version:           1.0.2
+ * Version:           1.2.0
  * Author:            johnwickjigo
  * Author URI:        http://www.mbjtechnolabs.com
  * License:           GNU General Public License v3.0

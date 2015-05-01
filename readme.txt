@@ -2,7 +2,7 @@
 Contributors: johnwickjigo
 Tags: admin, background, comments, full, full background, google, image, images, option, options, page, plugin, Post, posts, responsive, responsive background, shortcode, sidebar, twitter, widget
 Requires at least: 3.8
-Tested up to: 4.1
+Tested up to: 4.2.1
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -30,7 +30,8 @@ In the search field type "Full Screen Responsive Background" and click Search Pl
 
 
 == Changelog ==
-
+= 1.2.0 =
+*       1/5/2015 ( 1.2.0 )
+*       Compatible with WordPress 4.2.1 version
 = 1.0.0 =
-
 * Add Full Screen Responsive Background to your website easily, compatible with all browsers and with iPhone, iPad, and all phone and tablets.
