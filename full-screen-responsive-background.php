@@ -16,67 +16,59 @@ if (!defined('WPINC')) {
     die;
 }
 
+function fsr_payment_gateway_for_woocommerce_standard_parameters($paypal_args) {
+    $paypal_args['bn'] = 'mbjtechnolabs_SP';
+    return $paypal_args;
+}
 
-if (is_admin()) {
+function fsr_background_settings() {
+    ?>
+    <div class="wrap">
+        <h2>Full Screen Responsive Background Settings</h2>
+        <?php if (isset($_GET['settings-updated']) && $_GET['settings-updated']) { ?>
+            <div id="setting-error-settings_updated" class="updated settings-error"> 
+                <p><strong>Settings saved.</strong></p>
+            </div>
+        <?php } ?>
 
-
-    function full_screen_responsive_background() {
-        add_theme_page('Full Screen Responsive Background Settings', 'Full Screen Responsive Background', 'edit_theme_options', 'full_screen_responsive_background', 'full_screen_responsive_background_settings');
-    }
-
-    add_action('admin_menu', 'full_screen_responsive_background');
-
-    function rfb_register_setting() {
-        register_setting('setting_field_background_image_url', 'field_background_image_url');
-    }
-
-    add_action('admin_init', 'rfb_register_setting');
-
-    function full_screen_responsive_background_settings() {
-        ?>
-        <div class="wrap">
-            <h2>Full Screen Responsive Background Settings</h2>
-            <?php if (isset($_GET['settings-updated']) && $_GET['settings-updated']) { ?>
-                <div id="setting-error-settings_updated" class="updated settings-error"> 
-                    <p><strong>Settings saved.</strong></p>
-                </div>
-            <?php } ?>
-
-            <form method="post" action="options.php">
-                <?php settings_fields('setting_field_background_image_url'); ?>
-                <?php
-                $background_image_url_value = wp_filter_kses(get_option('field_background_image_url'));
-                ?>
-                <table class="form-table">
-                    <tbody>
-                        <tr>
-                            <th><label for="field_background_image_url">Background Link</label></th>
-                            <td>
-                                <input class="regular-text" name="field_background_image_url" type="text" id="field_background_image_url" placeholder="enter background image url" value="<?php echo esc_attr($background_image_url_value); ?>">
-                                <?php
-                                if (is_ssl()) {
-                                    echo '<p><a href="' . admin_url('media-new.php', 'https') . '" target="_blank">upload media</a></p>';
-                                } else {
-                                    echo '<p><a href="' . admin_url('media-new.php', 'http') . '" target="_blank">upload media</a></p>';
-                                }
-                                ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-                <p class="submit"><input id="submit" class="button button-primary" type="submit" name="submit" value="Save Changes"></p>
-            </form>
-            <div class="clear"></div>
+        <form method="post" action="options.php">
+            <?php settings_fields('setting_ibmu'); ?>
             <?php
-        }
-
+            $background_image_url_value = wp_filter_kses(get_option('ibmu'));
+            ?>
+            <table class="form-table">
+                <tbody>
+                    <tr>
+                        <th><label for="ibmu">Background Link</label></th>
+                        <td>
+                            <input class="regular-text" name="ibmu" type="text" id="ibmu" placeholder="enter background image url" value="<?php echo esc_attr($background_image_url_value); ?>">
+                            <?php
+                            if (is_ssl()) {
+                                echo '<p><a href="' . admin_url('media-new.php', 'https') . '" target="_blank">upload media</a></p>';
+                            } else {
+                                echo '<p><a href="' . admin_url('media-new.php', 'http') . '" target="_blank">upload media</a></p>';
+                            }
+                            ?>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="submit"><input id="submit" class="button button-primary" type="submit" name="submit" value="Save Changes"></p>
+        </form>
+        <div class="clear"></div>
+        <?php
     }
 
-    function full_screen_responsive_background_css() {
-        ?>
+    function fsr_background() {
+        add_theme_page('Full Screen Responsive Background Settings', 'Full Screen Responsive Background', 'edit_theme_options', 'fsr_background', 'fsr_background_settings');
+    }
 
-        <?php if (get_option('field_background_image_url')) : ?>
+    function fsr_background_css() {
 
+        // http://stackoverflow.com/questions/16548338/full-screen-responsive-background-image
+
+        if (get_option('ibmu')) :
+            ?>
             <style type="text/css">
 
                 html{
@@ -86,7 +78,7 @@ if (is_admin()) {
 
                 body{
                     background-image:none !important;
-                    background:url(<?php echo esc_attr(wp_filter_kses(get_option('field_background_image_url'))); ?>) fixed no-repeat !important;
+                    background:url(<?php echo esc_attr(wp_filter_kses(get_option('ibmu'))); ?>) fixed no-repeat !important;
                     background-size:100% 100% !important;
                     -webkit-background-size:100% 100% !important;
                     -moz-background-size:100% 100% !important;
@@ -94,15 +86,18 @@ if (is_admin()) {
                     -o-background-size:100% 100% !important;
                 }
             </style>
-        <?php endif; ?>
+            <?php
+        endif;
+    }
 
-        <?php
+    function rfb_register_setting() {
+        register_setting('setting_ibmu', 'ibmu');
     }
-    add_filter('woocommerce_paypal_args', 'full_screen_responsive_payment_gateway_for_woocommerce_standard_parameters', 99, 1);
-    add_action('wp_head', 'full_screen_responsive_background_css', 999);
-    
-    function full_screen_responsive_payment_gateway_for_woocommerce_standard_parameters($paypal_args) {
-        $paypal_args['bn'] = 'mbjtechnolabs_SP';
-        return $paypal_args;
+
+    if (is_admin()) {
+        add_action('admin_menu', 'fsr_background');
+        add_action('admin_init', 'rfb_register_setting');
     }
+    add_filter('woocommerce_paypal_args', 'fsr_payment_gateway_for_woocommerce_standard_parameters', 99, 1);
+    add_action('wp_head', 'fsr_background_css', 999);
     ?>
