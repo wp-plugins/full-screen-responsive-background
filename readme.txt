@@ -30,6 +30,8 @@ In the search field type "Full Screen Responsive Background" and click Search Pl
 
 
 == Changelog ==
+= 1.2.1 =
+*       remove code
 = 1.2.0 =
 *       1/5/2015 ( 1.2.0 )
 *       Compatible with WordPress 4.2.1 version

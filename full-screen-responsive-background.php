@@ -5,7 +5,7 @@
  * Plugin Name:       Full Screen Responsive Background
  * Plugin URI:        http://webs-spider.com/
  * Description:       Add Full Screen Responsive Background to your website easily, compatible with all browsers and with iPhone, iPad, and all phone and tablets.
- * Version:           1.2.0
+ * Version:           1.2.1
  * Author:            johnwickjigo
  * Author URI:        http://www.mbjtechnolabs.com
  * License:           GNU General Public License v3.0
@@ -71,20 +71,22 @@ function fsr_background_settings() {
             ?>
             <style type="text/css">
 
-                html{
-                    background-image:none !important;
-                    background:none !important;
-                }
-
                 body{
-                    background-image:none !important;
-                    background:url(<?php echo esc_attr(wp_filter_kses(get_option('ibmu'))); ?>) fixed no-repeat !important;
-                    background-size:100% 100% !important;
                     -webkit-background-size:100% 100% !important;
                     -moz-background-size:100% 100% !important;
                     -ms-background-size:100% 100% !important;
+                    background-image:none !important;
+                    background:url(<?php echo esc_attr(wp_filter_kses(get_option('ibmu'))); ?>) fixed no-repeat !important;
+                    background-size:100% 100% !important;
                     -o-background-size:100% 100% !important;
                 }
+                html{
+                    background:none !important;
+                    background-image:none !important;
+
+                }
+
+
             </style>
             <?php
         endif;
