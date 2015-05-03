@@ -6,7 +6,7 @@
  * Plugin URI:        http://webs-spider.com/
  * Description:       Add Full Screen Responsive Background to your website easily, compatible with all browsers and with iPhone, iPad, and all phone and tablets.
  * Version:           1.2.1
- * Author:            johnwickjigo
+ * Author:            Qassim Hassan
  * Author URI:        http://www.mbjtechnolabs.com
  * License:           GNU General Public License v3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
