@@ -6,12 +6,29 @@
  * Plugin URI:        http://webs-spider.com/
  * Description:       Add Full Screen Responsive Background to your website easily, compatible with all browsers and with iPhone, iPad, and all phone and tablets.
  * Version:           1.2.1
- * Author:            Qassim Hassan
+ * Author:            johnwickjigo
  * Author URI:        http://www.mbjtechnolabs.com
  * License:           GNU General Public License v3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.html
  */
 // If this file is called directly, abort.
+
+/*  Copyright 2015  Qassim Hassan  (email : qassim.pay@gmail.com)
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License, version 2, as
+  published by the Free Software Foundation.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ */
+
 if (!defined('WPINC')) {
     die;
 }

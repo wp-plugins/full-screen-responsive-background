@@ -1,5 +1,5 @@
 === Full Screen Responsive Background ===
-Contributors: Qassim Hassan, johnwickjigo
+Contributors: johnwickjigo
 Tags: admin, background, comments, full, full background, google, image, images, option, options, page, plugin, Post, posts, responsive, responsive background, shortcode, sidebar, twitter, widget
 Requires at least: 3.8
 Tested up to: 4.2.1
