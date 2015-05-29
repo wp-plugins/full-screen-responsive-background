@@ -1,5 +1,6 @@
 === Full Screen Responsive Background ===
 Contributors: johnwickjigo
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=68A46XPQMRCJN
 Tags: admin, background, comments, full, full background, google, image, images, option, options, page, plugin, Post, posts, responsive, responsive background, shortcode, sidebar, twitter, widget
 Requires at least: 3.8
 Tested up to: 4.2.1
